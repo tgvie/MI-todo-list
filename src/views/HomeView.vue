@@ -8,7 +8,9 @@ const todos = ref<string[]>([]); //Empty array of todo list
 const todoName = ref(''); //User's todo input
 
 function addTodo() {
+  if (todoName.value.trim() === '') return; //Check for empty inputs
   todos.value.push(todoName.value);
+  todoName.value = ''; //Clear input upon adding
 }
 </script>
 
