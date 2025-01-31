@@ -26,9 +26,9 @@ function toggleDoneState() {
 <template>
   <p :class="{ completed: isDone }">
     {{ todoText }}
-    <button @click="toggleDoneState">
+  </p>
+  <button @click="toggleDoneState">
       <span v-if="isDone">Undone</span>
       <span v-if="!isDone">Done</span>
     </button>
-  </p>
 </template>

@@ -27,18 +27,27 @@ function clearMsg() {
 
 <template>
   <main>
-    <input type="text" v-model="todoName" @keyup.enter="addTodo" />
-    <button @click="addTodo">+</button>
+    <div class="catch-phrase">
+      <img src="@/assets/images/froggy-think.png" alt="An animated frog thinking" width="500" height="400" />
+      <p>What's your plan for today?🎈</p>
+    </div>
 
-    <p v-if="todos.length === 0">What's your plan for today?🎈</p>
-
-    <div>
-      <!-- eslint-disable-next-line vue/no-use-v-if-with-v-for -->
-      <div v-if="todos.length > 0" v-for="(todo, index) in todos" :key="index">
-        <SingleTodo :todo-text="todo.text" :complete="todo.complete" :id="todo.id" @taskCompleted="onTaskCompleted" />
+    <div class="todo-container">
+      <div class="todo-input-container">
+        <input placeholder="enter your task here" type="text" v-model="todoName" @keyup.enter="addTodo" />
+        <img
+          src="@/assets/images/you-can-do-it.png"
+          alt="A sticky note with the text: you can do it"
+          width="500"
+          height="500"
+        />
       </div>
 
-      <p v-if="showCompletedMsg">You just finished a task, keep going!🔥</p>
+      <!-- eslint-disable-next-line vue/no-use-v-if-with-v-for -->
+      <div class="todo-item" v-if="todos.length > 0" v-for="(todo, index) in todos" :key="index">
+        <SingleTodo :todo-text="todo.text" :complete="todo.complete" :id="todo.id" @taskCompleted="onTaskCompleted" />
+      </div>
     </div>
+    <p v-if="showCompletedMsg">Nice job, keep going!🔥</p>
   </main>
 </template>

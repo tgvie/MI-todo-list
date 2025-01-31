@@ -1,0 +1,23 @@
+$primary-font: 'Yomogi', serif;
+$title-font: 'Short Stack', serif;
+
+$yellow-color: #ffeda8;
+$taupe-color: #b0a8a8;
+$black-color: #333333;
+
+@mixin button-style {
+  font-family: $title-font;
+  color: $taupe-color;
+  border: solid 2.5px $taupe-color;
+  border-radius: 50px;
+  padding: 10px 30px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #8e7f7f;
+    border-color: #8e7f7f;
+    color: #fff;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+  }
+}
