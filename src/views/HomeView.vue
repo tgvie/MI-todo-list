@@ -41,6 +41,7 @@ function clearMsg() {
           width="500"
           height="500"
         />
+        <div v-if="showCompletedMsg">Nice job, keep going!🔥</div>
       </div>
 
       <!-- eslint-disable-next-line vue/no-use-v-if-with-v-for -->
@@ -48,6 +49,5 @@ function clearMsg() {
         <SingleTodo :todo-text="todo.text" :complete="todo.complete" :id="todo.id" @taskCompleted="onTaskCompleted" />
       </div>
     </div>
-    <p v-if="showCompletedMsg">Nice job, keep going!🔥</p>
   </main>
 </template>
